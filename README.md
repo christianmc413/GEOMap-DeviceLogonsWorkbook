@@ -51,7 +51,7 @@ DeviceLogonEvents
 | extend MapLabel = strcat(RemoteIP, " (", Country, ") — ", Successes, " success / ", Attempts, " total")
 | project Latitude, Longitude, MapLabel, Attempts, Successes, Failures, TargetedDevices, RemoteIP, Country, City, Accounts
 | order by Successes desc, Attempts desc
-
+'''
 ---
 
 ### 1. Inbound Authentication Origins (Global Map View)
