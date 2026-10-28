@@ -20,6 +20,7 @@ This Microsoft Sentinel custom workbook visualizes inbound authentication origin
 
 The map and breakdown table are powered by the following Kusto Query Language (KQL) query:
 
+```kusto
 // === Inbound auth origins (geo) ===
 // Goal: plot WHERE remote logons originate, and whether they succeeded.
 DeviceLogonEvents
@@ -50,7 +51,7 @@ DeviceLogonEvents
 | extend MapLabel = strcat(RemoteIP, " (", Country, ") — ", Successes, " success / ", Attempts, " total")
 | project Latitude, Longitude, MapLabel, Attempts, Successes, Failures, TargetedDevices, RemoteIP, Country, City, Accounts
 | order by Successes desc, Attempts desc
-
+```
 ---
 
 ### 1. Inbound Authentication Origins (Global Map View)
