@@ -52,12 +52,28 @@ DeviceLogonEvents
 | project Latitude, Longitude, MapLabel, Attempts, Successes, Failures, TargetedDevices, RemoteIP, Country, City, Accounts
 | order by Successes desc, Attempts desc
 
+---
+
 ### 1. Inbound Authentication Origins (Global Map View)
 The map visualizes external logon origins where bubble **size** represents the total volume of logon attempts, and **color coding** reflects the success-to-failure ratio...
 
-image_115541
+<img width="1472" height="690" alt="image" src="https://github.com/user-attachments/assets/a52ca900-97da-4963-8a9e-72d2595199af" />
+
 
 ### 2. Source IP Breakdown Table
 A granular breakdown table sits below the map to assist analysts in triaging high-risk IPs...
 
-image_10fc03
+<img width="1470" height="512" alt="image" src="https://github.com/user-attachments/assets/e8e3c045-6a57-461c-908a-606e40aabfa9" />
+
+### Case Study 1: Suspicious Brute-Force Activity
+* **Target IP**: `80.94.95.83` (Romania) / `211.237.2.246` (South Korea)
+* **Activity**: High-volume authentication attempts...
+
+<img width="1691" height="388" alt="image" src="https://github.com/user-attachments/assets/c7aa624e-a23e-4f1c-904f-ba87048dfb70" />
+<img width="600" height="838" alt="image" src="https://github.com/user-attachments/assets/a6915a8a-0ae5-4a70-8f06-51c6d523325f" />
+
+### Case Study 2: Normal / Authorized User Access
+* **Target IP**: `66.51.113.103` (United States)
+* **Activity**: 4 attempts, 4 successes, 0 failures.
+
+<img width="1672" height="421" alt="image" src="https://github.com/user-attachments/assets/c5927f07-4ab6-49ce-a285-580b92d3a094" />
